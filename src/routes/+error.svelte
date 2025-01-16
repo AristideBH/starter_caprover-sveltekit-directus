@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import * as Card from '$lib/components/ui/card';
 	import { Button } from '$lib/components/ui/button';
 	import { ArrowLeftFromLine } from 'lucide-svelte';
 
-	const status = structuredClone($page.status);
-	const error = structuredClone($page.error);
+	const status = structuredClone(page.status);
+	const error = structuredClone(page.error);
 </script>
 
 <section>

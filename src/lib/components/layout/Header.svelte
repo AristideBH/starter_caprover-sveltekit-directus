@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Navigation from '$lib/components/navigation/Navigation.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { loading } from '$lib/logic/pageLoading.svelte';
 	import LoadingBar from './LoadingBar.svelte';
-	let { project_name, project_descriptor } = $page.data.global;
+	let { project_name, project_descriptor } = page.data.global;
 </script>
 
 <header class="sticky bottom-0 z-50 bg-muted py-4">

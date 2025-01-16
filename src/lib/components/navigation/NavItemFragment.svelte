@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Collections } from '$types/client';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	type Props = {
 		item: Collections.MenuItems;
@@ -16,7 +16,7 @@
 		class={className ?? ''}
 		href={item.url}
 		target={item.open_in_new_tab ? '_blank' : ''}
-		class:active={$page.url.pathname === item.url}
+		class:active={page.url.pathname === item.url}
 		{...onclick ? { onclick } : {}}
 	>
 		{item.label}
@@ -25,7 +25,7 @@
 	<a
 		class={className ?? ''}
 		href="/{item.page?.permalink}"
-		class:active={$page.url.pathname.replace('/', '') === item.page?.permalink}
+		class:active={page.url.pathname.replace('/', '') === item.page?.permalink}
 		{...onclick ? { onclick } : {}}
 	>
 		{item.label}

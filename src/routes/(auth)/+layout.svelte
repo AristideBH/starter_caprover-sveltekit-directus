@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Section from '$lib/components/layout/Section.svelte';
 
-	let title = `${$page.url.pathname.slice(1).charAt(0).toUpperCase()}${$page.url.pathname.slice(2)}`;
+	let title = `${page.url.pathname.slice(1).charAt(0).toUpperCase()}${page.url.pathname.slice(2)}`;
 
 	let { children } = $props();
 </script>

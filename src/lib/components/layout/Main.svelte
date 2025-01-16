@@ -53,6 +53,6 @@ Props:
 
 {#key transitionKey}
 	<main in:fly={{ y, x, delay: delta + duration }} out:fly={{ duration, y: -y, x: -x }}>
-		{@render children()}
+		{@render children?.()}
 	</main>
 {/key}

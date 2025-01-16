@@ -9,11 +9,11 @@
 	import * as Card from '$lib/components/ui/card';
 
 	import { toast } from 'svelte-sonner';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Footer from '../layout/Footer.svelte';
 
 	const directus = getContext<DirectusClient>('directus');
-	let user = $state($page.data.user);
+	let user = $state(page.data.user);
 
 	type Props = {
 		class?: string;

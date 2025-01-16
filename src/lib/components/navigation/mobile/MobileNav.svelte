@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Collections } from '$lib/types/client';
 
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { Button } from '$lib/components/ui/button';
 	import Menu from 'lucide-svelte/icons/menu';
 	import * as Drawer from '$lib/components/ui/drawer';
@@ -14,7 +14,7 @@
 	};
 
 	let { menu }: Props = $props();
-	let { project_name, project_descriptor } = $page.data.global;
+	let { project_name, project_descriptor } = page.data.global;
 </script>
 
 <Drawer.Root bind:open={$isDrawerOpen}>

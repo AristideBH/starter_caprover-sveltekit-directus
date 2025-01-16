@@ -1,8 +1,8 @@
 <script lang="ts">
 	import NavItemFragment from '../navigation/NavItemFragment.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
-	const { footerNav: menu } = $page.data;
+	const { footerNav: menu } = page.data;
 </script>
 
 <footer class="mt-auto bg-muted pt-4">
@@ -13,7 +13,7 @@
 			{/each}
 		</nav>
 		<span class="flex flex-wrap gap-2"
-			>{#if $page.data.token}
+			>{#if page.data.token}
 				<a href="/profile">Profile</a>
 				<a href="/logout" data-sveltekit-preload-data="off">Logout</a>
 			{:else}
